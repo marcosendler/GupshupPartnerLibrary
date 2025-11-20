@@ -74,7 +74,15 @@ Biblioteca completa e moderna para integração com as **APIs de Parceiro do Gup
 
 ## 🔨 Instalação
 
-### 1. Copie os arquivos para seu projeto Laravel
+### Instalação via Composer (recomendado)
+
+```bash
+composer require marcosendler/gupshup-partner
+```
+
+A partir do Laravel 5.5, a maioria dos pacotes são carregados automaticamente via Package Discovery. Se você preferir registrar manualmente, veja abaixo.
+
+### 1. Copie os arquivos para seu projeto Laravel (alternativa manual / estrutura antiga)
 
 ```bash
 # Estrutura de diretórios
@@ -105,12 +113,16 @@ Em `config/app.php`:
 ```php
 'providers' => [
     // ...
-    App\Providers\GupshupPartnerServiceProvider::class,
+    // Para instalação via composer
+    GupshupPartner\GupshupPartnerServiceProvider::class,
+    // Para instalação manual (copiando arquivos para `app/Providers`):
+    // App\Providers\GupshupPartnerServiceProvider::class,
 ],
 
 'aliases' => [
     // ...
-    'GupshupPartner' => App\Facades\GupshupPartner::class,
+    'GupshupPartner' => GupshupPartner\Facades\GupshupPartner::class,
+    // 'GupshupPartner' => App\Facades\GupshupPartner::class, // manual install
 ],
 ```
 
@@ -136,7 +148,7 @@ php artisan vendor:publish --tag=gupshup-config
 ### Exemplo Básico
 
 ```php
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 
 // Listar apps
 $apps = GupshupPartner::apps()->list();
@@ -161,7 +173,7 @@ $analytics = GupshupPartner::analytics()->getTodayAnalytics('app-id');
 ```php
 namespace App\Http\Controllers;
 
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 use Illuminate\Http\Request;
 
 class WhatsAppController extends Controller
@@ -223,7 +235,7 @@ A biblioteca gerencia automaticamente:
 ## 🛡️ Tratamento de Erros
 
 ```php
-use App\Services\GupshupPartner\Exceptions\GupshupPartnerException;
+use GupshupPartner\Exceptions\GupshupPartnerException;
 
 try {
     $result = GupshupPartner::apps()->list();

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\GupshupPartner\Exceptions;
+namespace GupshupPartner\Exceptions;
 
 use Exception;
 

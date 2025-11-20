@@ -34,12 +34,15 @@ No arquivo `config/app.php`, adicione:
 ```php
 'providers' => [
     // ...
-    App\Providers\GupshupPartnerServiceProvider::class,
+    // Para instalação via composer
+    GupshupPartner\GupshupPartnerServiceProvider::class,
+    // Para instalação manual (copiando arquivos para `app/Providers`):
+    // App\Providers\GupshupPartnerServiceProvider::class,
 ],
 
 'aliases' => [
     // ...
-    'GupshupPartner' => App\Facades\GupshupPartner::class,
+    'GupshupPartner' => GupshupPartner\Facades\GupshupPartner::class,
 ],
 ```
 
@@ -68,7 +71,7 @@ php artisan vendor:publish --tag=gupshup-config
 ### 1. Gerenciamento de Apps
 
 ```php
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 
 // Listar todos os apps
 $apps = GupshupPartner::apps()->list();
@@ -100,7 +103,7 @@ GupshupPartner::apps()->setIceBreakers('app-id-123', [
 ### 2. Gerenciamento de Templates
 
 ```php
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 
 $appId = 'seu-app-id';
 
@@ -192,7 +195,7 @@ GupshupPartner::templates()->delete($appId, 'template-id');
 ### 3. Envio de Mensagens
 
 ```php
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 
 $appId = 'seu-app-id';
 $destination = '5511999999999'; // Número com código do país
@@ -270,7 +273,7 @@ GupshupPartner::messages()->setUtilityValidity(
 ### 4. Analytics e Relatórios
 
 ```php
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 use Carbon\Carbon;
 
 $appId = 'seu-app-id';
@@ -360,7 +363,7 @@ $summary = GupshupPartner::analytics()->getSummaryMetrics(
 ### 5. Gerenciamento de Wallet (Carteira)
 
 ```php
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 
 $walletId = 'sua-wallet-id';
 
@@ -396,7 +399,7 @@ $expired = GupshupPartner::wallet()->getExpiredCredits($walletId);
 ### 6. Gerenciamento de Flows
 
 ```php
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 
 $appId = 'seu-app-id';
 
@@ -461,7 +464,7 @@ GupshupPartner::flows()->unsubscribeAll($appId, 'flow-id');
 
 namespace App\Http\Controllers;
 
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
@@ -558,7 +561,7 @@ class WhatsAppController extends Controller
 ## Tratamento de Erros
 
 ```php
-use App\Services\GupshupPartner\Exceptions\GupshupPartnerException;
+use GupshupPartner\Exceptions\GupshupPartnerException;
 
 try {
     $templates = GupshupPartner::templates()->list($appId);
@@ -584,7 +587,7 @@ try {
 ## Uso Direto (sem Facade)
 
 ```php
-use App\Services\GupshupPartner\GupshupPartnerClient;
+use GupshupPartner\GupshupPartnerClient;
 
 $client = new GupshupPartnerClient('email@exemplo.com', 'senha');
 
@@ -599,7 +602,7 @@ $analytics = $client->analytics()->getTodayAnalytics($appId);
 ## Uso com Dependency Injection
 
 ```php
-use App\Services\GupshupPartner\GupshupPartnerClient;
+use GupshupPartner\GupshupPartnerClient;
 
 class MyService
 {

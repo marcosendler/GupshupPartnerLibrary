@@ -5,19 +5,19 @@ namespace GupshupPartner\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static \App\Services\GupshupPartner\AppManagement apps()
- * @method static \App\Services\GupshupPartner\TemplateManagement templates()
- * @method static \App\Services\GupshupPartner\MessageManagement messages()
- * @method static \App\Services\GupshupPartner\AnalyticsManagement analytics()
- * @method static \App\Services\GupshupPartner\WalletManagement wallet()
- * @method static \App\Services\GupshupPartner\FlowManagement flows()
  * @method static string getPartnerToken(bool $forceRefresh = false)
  * @method static mixed get(string $endpoint, array $params = [])
  * @method static mixed post(string $endpoint, array $data = [])
  * @method static mixed put(string $endpoint, array $data = [])
  * @method static mixed delete(string $endpoint, array $data = [])
  *
- * @see \App\Services\GupshupPartner\GupshupPartnerClient
+ * @method static \GupshupPartner\AppManagement apps()
+ * @method static \GupshupPartner\TemplateManagement templates()
+ * @method static \GupshupPartner\MessageManagement messages()
+ * @method static \GupshupPartner\AnalyticsManagement analytics()
+ * @method static \GupshupPartner\WalletManagement wallet()
+ * @method static \GupshupPartner\FlowManagement flows()
+ * @see \GupshupPartner\GupshupPartnerClient
  */
 class GupshupPartner extends Facade
 {

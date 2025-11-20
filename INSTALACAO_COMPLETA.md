@@ -72,18 +72,21 @@ Edite o arquivo `config/app.php`:
 
 ```php
 return [
-    // ...
-    
-    'providers' => [
-        // ... outros providers
+        // Se instalado via Composer
+        GupshupPartner\GupshupPartnerServiceProvider::class,
+        // Se copiado manualmente para `app/Providers` (opção antiga)
+        // App\Providers\GupshupPartnerServiceProvider::class,
         
-        App\Providers\GupshupPartnerServiceProvider::class,
-    ],
+        // Para instalação via composer
+        GupshupPartner\GupshupPartnerServiceProvider::class,
+        // Para instalação manual (copiando arquivos para `app/Providers`):
+        // App\Providers\GupshupPartnerServiceProvider::class,
+        'GupshupPartner' => GupshupPartner\Facades\GupshupPartner::class,
     
     'aliases' => [
         // ... outros aliases
         
-        'GupshupPartner' => App\Facades\GupshupPartner::class,
+        'GupshupPartner' => GupshupPartner\Facades\GupshupPartner::class,
     ],
 ];
 ```
@@ -106,6 +109,14 @@ php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
 ```
+
+### Instalação via Composer (recomendado)
+
+```bash
+composer require marcosendler/gupshup-partner
+```
+
+Laravel deve registrar automaticamente o Service Provider via Package Discovery; se necessário, siga os passos acima para registro manual.
 
 ---
 
@@ -135,7 +146,7 @@ php artisan config:cache
 Crie um arquivo de teste `routes/web.php`:
 
 ```php
-use App\Facades\GupshupPartner;
+use GupshupPartner\Facades\GupshupPartner;
 
 Route::get('/test-gupshup', function () {
     try {
