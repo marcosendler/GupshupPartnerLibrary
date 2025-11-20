@@ -1,9 +1,13 @@
 # 📱 Gupshup Partner API - Laravel Package
 
+![CI](https://github.com/marcosendler/GupshupPartnerLibrary/actions/workflows/ci.yml/badge.svg)
+
 [![Latest Version](https://img.shields.io/github/v/release/marcosendler/laravel-gupshup-partner)](https://github.com/marcosendler/laravel-gupshup-partner/releases)
 [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-blue)](https://php.net)
 [![Laravel Version](https://img.shields.io/badge/Laravel-10.x%7C11.x-red)](https://laravel.com)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Tests](https://github.com/marcosendler/laravel-gupshup-partner/workflows/tests/badge.svg)](https://github.com/marcosendler/laravel-gupshup-partner/actions)
+[![Downloads](https://img.shields.io/packagist/dt/marcosendler/laravel-gupshup-partner)](https://packagist.org/packages/marcosendler/laravel-gupshup-partner)
 
 Biblioteca completa e moderna para integração com as **APIs de Parceiro do Gupshup** em projetos Laravel. Gerencie apps, templates, mensagens, analytics, wallet e flows do WhatsApp Business de forma simples e eficiente.
 
