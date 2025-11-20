@@ -1,6 +1,6 @@
 # 📱 Gupshup Partner API - Laravel Package
 
-[![Latest Version](https://img.shields.io/github/v/release/marcosendler/GupshupPartnerLibrary)](https://github.com/marcosendler/GupshupPartnerLibrary/releases)
+[![Latest Version](https://img.shields.io/github/v/release/marcosendler/laravel-gupshup-partner)](https://github.com/marcosendler/laravel-gupshup-partner/releases)
 [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-blue)](https://php.net)
 [![Laravel Version](https://img.shields.io/badge/Laravel-10.x%7C11.x-red)](https://laravel.com)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -359,9 +359,9 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ## 🆘 Suporte
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/marcosendler/GupshupPartnerLibrary/issues)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/marcosendler/laravel-gupshup-partner/issues)
 - 📖 **Documentação Gupshup**: [https://partner-docs.gupshup.io/](https://partner-docs.gupshup.io/)
-- 💬 **Discussões**: [GitHub Discussions](https://github.com/marcosendler/GupshupPartnerLibrary/discussions)
+- 💬 **Discussões**: [GitHub Discussions](https://github.com/marcosendler/laravel-gupshup-partner/discussions)
 
 ---
 
